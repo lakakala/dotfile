@@ -12,7 +12,7 @@ TIMEOUT=5
 # .work_env = home
 HTTP_PROXY="http://192.168.124.200:7890"
 
-{{ if eq .work_env "bytedance_work"}}
+{{ else if eq .work_env "bytedance_work"}}
 
 # .work_env = bytedance_work
 HTTP_PROXY="http://127.0.0.1:7890"
