@@ -111,7 +111,7 @@ export proxy=http://192.168.124.200:7890
 export http_proxy=$proxy
 export https_proxy=$proxy
 
-{{ if eq .work_env "bytedance_work" }}
+{{ else if eq .work_env "bytedance_work" }}
 
 export PATH="/usr/local/go/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
