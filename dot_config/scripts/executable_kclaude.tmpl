@@ -8,11 +8,11 @@
 
 ALLOWED_IP="45.140.88.53" # 通过环境变量或直接修改此默认值
 TIMEOUT=5
-{{ eq .work_env "home" }}
+{{ if eq .work_env "home" }}
 # .work_env = home
 HTTP_PROXY="http://192.168.124.200:7890"
 
-{{ eq .work_env "bytedance_work"}}
+{{ if eq .work_env "bytedance_work"}}
 
 # .work_env = bytedance_work
 HTTP_PROXY="http://127.0.0.1:7890"
