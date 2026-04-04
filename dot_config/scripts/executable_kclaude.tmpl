@@ -6,10 +6,18 @@
 # 配置: 修改 ALLOWED_IP 为你的目标 IP
 # ============================================
 
-ALLOWED_IP="45.140.88.53"  # 通过环境变量或直接修改此默认值
+ALLOWED_IP="45.140.88.53" # 通过环境变量或直接修改此默认值
 TIMEOUT=5
+{{ eq .work_env "home" }}
+# .work_env = home
 HTTP_PROXY="http://192.168.124.200:7890"
 
+{{ eq .work_env "bytedance_work"}}
+
+# .work_env = bytedance_work
+HTTP_PROXY="http://127.0.0.1:7890"
+
+{{ end }}
 export https_proxy=$HTTP_PROXY
 export http_proxy=$HTTP_PROXY
 export HTTPS_PROXY=$HTTP_PROXY
@@ -20,14 +28,14 @@ echo "设置代理为 $HTTP_PROXY"
 current_ip=$(curl -s --max-time "$TIMEOUT" ipinfo.io/ip)
 
 if [[ -z "$current_ip" ]]; then
-    echo "[ERROR] 无法获取当前公网 IP，请检查网络连接" >&2
-    exit 1
+  echo "[ERROR] 无法获取当前公网 IP，请检查网络连接" >&2
+  exit 1
 fi
 
 if [[ "$current_ip" != "$ALLOWED_IP" ]]; then
-    echo "[BLOCKED] 当前 IP: $current_ip, 允许的 IP: $ALLOWED_IP" >&2
-    echo "[BLOCKED] IP 不匹配，拒绝启动 Claude" >&2
-    exit 1
+  echo "[BLOCKED] 当前 IP: $current_ip, 允许的 IP: $ALLOWED_IP" >&2
+  echo "[BLOCKED] IP 不匹配，拒绝启动 Claude" >&2
+  exit 1
 fi
 
 echo "[OK] IP 校验通过: $current_ip"

@@ -111,12 +111,20 @@ export proxy=http://192.168.124.200:7890
 export http_proxy=$proxy
 export https_proxy=$proxy
 
+{{ if eq .work_env "bytedance_work" }}
+
+export PATH="/usr/local/go/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
+export PATH=$PATH:$HOME/.local/mockery
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+
 {{ end  }}
 
 alias claude=kclaude
-export PATH="$PATH:$HOME/.config/scripts"
+eval "$(zellij setup --generate-auto-start zsh)"
 
 source /usr/share/nvm/init-nvm.sh
+
 
 # pnpm
 export PNPM_HOME="/home/kexin/.local/share/pnpm"
@@ -127,3 +135,7 @@ esac
 # pnpm end
 
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.config/scripts"
+
+
+
