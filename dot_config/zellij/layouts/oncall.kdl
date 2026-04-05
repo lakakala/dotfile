@@ -1,0 +1,19 @@
+layout {
+	tab name="oncall" split_direction="vertical" {
+        // 左侧大面板，打开编辑器
+        pane size="70%" command="coco" {
+        }
+        
+        // 右侧切分为上下两个面板
+        pane split_direction="horizontal" {
+            pane command="coco" {}
+            pane command="nvim" {
+                args "~/bpm-projects/ens_bpm_form/main.go"
+            }
+        }
+    }
+
+    tab name="Monitor" {
+        pane command="htop"
+    }
+}
