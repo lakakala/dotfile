@@ -1,0 +1,39 @@
+# --- 字体排版 (Typography) ---
+# 设置主字体，如果找不到会使用系统等宽字体
+font-family = "JetbrainsMono Nerd Font Mono"
+font-size = 14
+# 字体加粗效果优化
+font-thicken = true
+font-thicken-strength = 1
+# 调整行高（如果觉得字体太紧凑可以调大，如 1.2）
+adjust-cell-height = 1
+theme = Catppuccin Mocha
+
+# command = "/opt/homebrew/bin/fish"
+
+# --- 窗口与外观 (Aesthetics) ---
+# 背景颜色（Hex）
+background = #000000
+# 背景透明度 (0.0 到 1.0)
+background-opacity = 0.85
+# 背景模糊程度 (macOS 下效果较好)
+background-blur = 16
+
+# 隐藏 macOS 原生标题栏，使界面更沉浸
+macos-titlebar-style = transparent
+window-padding-y = 20
+# 如果 x 方向也需要内边距
+window-padding-x = 20
+
+# 设置终端内的标题字体
+window-title-font-family = "MonoLisa Variable"
+
+# --- 快捷键与行为 (Keybinds) ---
+# 示例：自定义 tmux 前缀快捷键 (cmd+b 映射为发送 Ctrl+B)
+keybind = cmd+b=text:\x01
+# 示例：在 tmux 中快速缩放当前面板 (cmd+z 发送 Ctrl+b, z)
+keybind = cmd+z=text:\x01\x7a
+
+# --- 其他功能 ---
+# 关闭配置空值则重置为默认值
+# font-style = false # 禁用斜体/粗体合成
