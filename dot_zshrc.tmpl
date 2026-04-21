@@ -121,7 +121,7 @@ export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 {{ end  }}
 
 alias claude=kclaude
-eval "$(zellij setup --generate-auto-start zsh)"
+# eval "$(zellij setup --generate-auto-start zsh)"
 
 # source /usr/share/nvm/init-nvm.sh
 
@@ -130,7 +130,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # pnpm
-export PNPM_HOME="/home/kexin/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -140,6 +139,7 @@ esac
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.config/scripts"
 
+export PNPM_HOME="$HOME/.local/share/pnpm"
 
 # config starship
 eval "$(starship init zsh)"

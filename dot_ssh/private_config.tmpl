@@ -1,0 +1,41 @@
+{{ if eq .work_env "bytedance_work" }}
+
+# -- CloudIDE injection begin --
+Include "/Users/bytedance/Library/Application Support/cloudide-cli/*/ssh.d/*"
+# -- CloudIDE injection end --
+
+# -- Byted IDE injection begin --
+Include /Users/bytedance/.byted-ide/ssh_config
+# -- injection end --
+Host 10.37.81.5
+  HostName 10.37.81.5
+  User kexin.cola
+
+Host 10.37.81.5
+  HostName 10.37.81.5
+  User kexin.coal
+
+# Read more about SSH config files: https://linux.die.net/man/5/ssh_config
+Host bytedance-dev
+  HostName fdbd:dc01:ff:314:1a3d:3a89:b876:436c
+  User kexin.cola
+
+{{ end }}
+  
+
+Host dedirock
+  HostName 107.175.140.21
+  User kexin
+
+Host dedirock-relay
+  HostName 47.93.29.108
+  User kexin
+  Port 6000
+
+Host alibaba
+  HostName 47.93.29.108
+  User kexin
+
+Host dogyun
+  HostName 45.140.88.53
+  User kexin
