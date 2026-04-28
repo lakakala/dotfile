@@ -37,3 +37,5 @@ keybind = cmd+z=text:\x01\x7a
 # --- 其他功能 ---
 # 关闭配置空值则重置为默认值
 # font-style = false # 禁用斜体/粗体合成
+
+shell-integration-features = ssh-env,ssh-terminfo
