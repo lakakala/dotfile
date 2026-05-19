@@ -3,3 +3,5 @@
 -- Add any additional options here
 
 vim.opt.tabstop = 4
+vim.opt.autoread = true
+vim.opt.updatetime = 1000
